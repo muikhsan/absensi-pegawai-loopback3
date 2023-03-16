@@ -1,0 +1,52 @@
+{
+  "name": "pegawai",
+  "plural": "Pegawai",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "gender": {
+      "type": "string",
+      "required": true,
+      "enum": ["L", "P"]
+    },
+    "jabatan": {
+      "type": "string",
+      "required": true
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "absensi": {
+      "type": "hasMany",
+      "model": "absensiPegawai",
+      "foreignKey": "username",
+      "cascadeOnDelete": true
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

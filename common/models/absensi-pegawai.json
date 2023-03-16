@@ -1,0 +1,38 @@
+{
+  "name": "absensiPegawai",
+  "plural": "Absen",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "jenis": {
+      "type": "string",
+      "required": true,
+      "enum": ["hadir", "izin", "cuti"]
+    },
+    "tanggal": {
+      "type": "date",
+      "required": true
+    },
+    "keterangan": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "approved", "rejected"]
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pegawai": {
+      "type": "belongsTo",
+      "model": "pegawai",
+      "foreignKey": "username",
+      "cascade": "delete"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

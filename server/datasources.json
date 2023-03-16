@@ -1,0 +1,13 @@
+{
+  "mongoDB": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "absensiPegawai",
+    "password": "",
+    "name": "mongoDB",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}
